@@ -29,6 +29,22 @@ const List<String> enUsMonths = [
   'November',
   'December'
 ];
+
+const List<String> ptBRMonths = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro'
+];
+
 const List<String> frFrMonths = [
   'Janvier',
   'Février',
@@ -79,6 +95,7 @@ enum DatePickerLocale {
   frFR,
   deDE,
   viVN,
+  ptBR,
 }
 
 extension DatePickerLocaleExtension on DatePickerLocale {

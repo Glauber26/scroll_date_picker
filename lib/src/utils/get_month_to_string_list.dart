@@ -16,8 +16,11 @@ List<String> getMonthsToStringList(
     case DatePickerLocale.viVN:
       _months = viVnMonths;
       break;
+    case DatePickerLocale.ptBR:
+      _months = ptBRMonths;
+      break;
     default:
-      _months = enUsMonths;
+      _months = ptBRMonths;
   }
   return _months.sublist(months.first - 1, months.last);
 }
