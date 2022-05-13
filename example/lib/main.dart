@@ -48,10 +48,28 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           SizedBox(
-            height: 250,
+            height: 200,
             child: ScrollDatePicker(
+              indicator: Container(
+                height: 20,
+                width: 0,
+              ),
+              minimumDate: DateTime.now().subtract(Duration(days: 36500)),
+              maximumDate: DateTime.now().add(Duration(days: 36500)),
+              options: DatePickerOptions(itemExtent: 25),
+              style: DatePickerStyle(
+                selectedTextStyle: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),
+                textStyle: TextStyle(color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              verticalDivider: SizedBox(
+                height: 130,
+                child: VerticalDivider(
+                  color: Colors.black,
+                  thickness: 1,
+                ),
+              ),
               selectedDate: _selectedDate,
-              locale: DatePickerLocale.viVN,
+              locale: DatePickerLocale.ptBR,
               onDateTimeChanged: (DateTime value) {
                 setState(() {
                   _selectedDate = value;
