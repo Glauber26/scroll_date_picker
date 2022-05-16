@@ -47,12 +47,18 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           ),
-          SizedBox(
+          Container(
+            color: Colors.transparent,
             height: 200,
+            //width: MediaQuery.of(context).size.width,
             child: ScrollDatePicker(
               indicator: Container(
                 height: 20,
                 width: 0,
+              ),
+              localeOptions: DatePickerLocaleOptions(
+                monthWidth: 140,
+                monthAlignment: Alignment.center,
               ),
               minimumDate: DateTime.now().subtract(Duration(days: 36500)),
               maximumDate: DateTime.now().add(Duration(days: 36500)),

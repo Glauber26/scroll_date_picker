@@ -18,6 +18,7 @@ class ScrollDatePicker extends StatefulWidget {
     DatePickerStyle? style,
     Widget? indicator,
     Widget? verticalDivider,
+    Color? gradientColor,
   })  : selectedDate = selectedDate,
         minimumDate = minimumDate ?? DateTime(1960, 1, 1),
         maximumDate = maximumDate ?? DateTime.now(),
@@ -27,7 +28,8 @@ class ScrollDatePicker extends StatefulWidget {
         localeOptions = localeOptions,
         style = style ?? const DatePickerStyle(),
         indicator = indicator,
-        verticalDivider = verticalDivider ?? Container();
+        verticalDivider = verticalDivider ?? Container(),
+        gradientColor = gradientColor;
 
   /// The currently selected date.
   final DateTime selectedDate;
@@ -57,6 +59,9 @@ class ScrollDatePicker extends StatefulWidget {
 
   /// Vertical divider to separete ScrollDatePicker
   final Widget? verticalDivider;
+
+  ///Gradient color
+  final Color? gradientColor;
 
   @override
   State<ScrollDatePicker> createState() => _ScrollDatePickerState();
@@ -258,8 +263,8 @@ class _ScrollDatePickerState extends State<ScrollDatePicker> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Theme.of(context).scaffoldBackgroundColor,
-                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
+                        widget.gradientColor != null ? widget.gradientColor! : Colors.white,
+                        widget.gradientColor != null ? widget.gradientColor!.withOpacity(0.7) : Colors.white.withOpacity(0.7),
                       ],
                     ),
                   ),
@@ -280,8 +285,8 @@ class _ScrollDatePickerState extends State<ScrollDatePicker> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
-                        Theme.of(context).scaffoldBackgroundColor,
+                        widget.gradientColor != null ? widget.gradientColor!.withOpacity(0.7) : Colors.white.withOpacity(0.7),
+                        widget.gradientColor != null ? widget.gradientColor! : Colors.white,
                       ],
                     ),
                   ),
